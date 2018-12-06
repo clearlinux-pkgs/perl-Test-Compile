@@ -4,7 +4,7 @@
 #
 Name     : perl-Test-Compile
 Version  : 1.3.0
-Release  : 6
+Release  : 7
 URL      : https://cpan.metacpan.org/authors/id/E/EG/EGILES/Test-Compile-v1.3.0.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/E/EG/EGILES/Test-Compile-v1.3.0.tar.gz
 Summary  : 'Check whether Perl files compile correctly.'
