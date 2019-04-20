@@ -20,6 +20,16 @@ or scripts compile properly, and report its results in standard
 Test::Simple fashion. It can test all Perl files in a distribution, or
 individual files.
 
+%package dev
+Summary: dev components for the perl-Test-Compile package.
+Group: Development
+Provides: perl-Test-Compile-devel = %{version}-%{release}
+Requires: perl-Test-Compile = %{version}-%{release}
+
+%description dev
+dev components for the perl-Test-Compile package.
+
+
 %prep
 %setup -q -n Test-Compile-v1.3.0
 
@@ -57,3 +67,10 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
+/usr/lib/perl5/vendor_perl/5.28.2/Test/Compile.pm
+/usr/lib/perl5/vendor_perl/5.28.2/Test/Compile/Internal.pm
+
+%files dev
+%defattr(-,root,root,-)
+/usr/share/man/man3/Test::Compile.3
+/usr/share/man/man3/Test::Compile::Internal.3
