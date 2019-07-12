@@ -4,10 +4,10 @@
 #
 Name     : perl-Test-Compile
 Version  : 2.2.2
-Release  : 21
+Release  : 22
 URL      : https://cpan.metacpan.org/authors/id/E/EG/EGILES/Test-Compile-v2.2.2.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/E/EG/EGILES/Test-Compile-v2.2.2.tar.gz
-Summary  : 'Check whether Perl files compile correctly.'
+Summary  : Check whether Perl files compile correctly.
 Group    : Development/Tools
 License  : Artistic-1.0 Artistic-1.0-Perl GPL-1.0
 Requires: perl-Test-Compile-license = %{version}-%{release}
@@ -25,6 +25,7 @@ individual files.
 Summary: dev components for the perl-Test-Compile package.
 Group: Development
 Provides: perl-Test-Compile-devel = %{version}-%{release}
+Requires: perl-Test-Compile = %{version}-%{release}
 Requires: perl-Test-Compile = %{version}-%{release}
 
 %description dev
