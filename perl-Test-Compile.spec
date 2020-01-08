@@ -4,13 +4,14 @@
 #
 Name     : perl-Test-Compile
 Version  : 2.3.1
-Release  : 24
+Release  : 25
 URL      : https://cpan.metacpan.org/authors/id/E/EG/EGILES/Test-Compile-v2.3.1.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/E/EG/EGILES/Test-Compile-v2.3.1.tar.gz
-Summary  : Check whether Perl files compile correctly.
+Summary  : 'Check whether Perl files compile correctly.'
 Group    : Development/Tools
 License  : Artistic-1.0 Artistic-1.0-Perl GPL-1.0
 Requires: perl-Test-Compile-license = %{version}-%{release}
+Requires: perl-Test-Compile-perl = %{version}-%{release}
 BuildRequires : buildreq-cpan
 BuildRequires : perl(UNIVERSAL::require)
 BuildRequires : util-linux
@@ -27,7 +28,6 @@ Summary: dev components for the perl-Test-Compile package.
 Group: Development
 Provides: perl-Test-Compile-devel = %{version}-%{release}
 Requires: perl-Test-Compile = %{version}-%{release}
-Requires: perl-Test-Compile = %{version}-%{release}
 
 %description dev
 dev components for the perl-Test-Compile package.
@@ -41,8 +41,18 @@ Group: Default
 license components for the perl-Test-Compile package.
 
 
+%package perl
+Summary: perl components for the perl-Test-Compile package.
+Group: Default
+Requires: perl-Test-Compile = %{version}-%{release}
+
+%description perl
+perl components for the perl-Test-Compile package.
+
+
 %prep
 %setup -q -n Test-Compile-v2.3.1
+cd %{_builddir}/Test-Compile-v2.3.1
 
 %build
 export http_proxy=http://127.0.0.1:9/
@@ -80,8 +90,6 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.2/Test/Compile.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Test/Compile/Internal.pm
 
 %files dev
 %defattr(-,root,root,-)
@@ -91,3 +99,8 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 %files license
 %defattr(0644,root,root,0755)
 /usr/share/package-licenses/perl-Test-Compile/ca04e67360ff58b1f1099f198aead90c130ddd4e
+
+%files perl
+%defattr(-,root,root,-)
+/usr/lib/perl5/vendor_perl/5.30.1/Test/Compile.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Test/Compile/Internal.pm
