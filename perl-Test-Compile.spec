@@ -4,7 +4,7 @@
 #
 Name     : perl-Test-Compile
 Version  : 3.1.0
-Release  : 40
+Release  : 41
 URL      : https://cpan.metacpan.org/authors/id/E/EG/EGILES/Test-Compile-v3.1.0.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/E/EG/EGILES/Test-Compile-v3.1.0.tar.gz
 Summary  : 'Assert that your Perl files compile OK.'
@@ -100,5 +100,4 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.34.0/Test/Compile.pm
-/usr/lib/perl5/vendor_perl/5.34.0/Test/Compile/Internal.pm
+/usr/lib/perl5/*
