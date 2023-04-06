@@ -4,10 +4,10 @@
 # Using build pattern: cpan
 #
 Name     : perl-Test-Compile
-Version  : 3.2.1
-Release  : 44
-URL      : https://cpan.metacpan.org/authors/id/E/EG/EGILES/Test-Compile-v3.2.1.tar.gz
-Source0  : https://cpan.metacpan.org/authors/id/E/EG/EGILES/Test-Compile-v3.2.1.tar.gz
+Version  : 3.2.2
+Release  : 45
+URL      : https://cpan.metacpan.org/authors/id/E/EG/EGILES/Test-Compile-v3.2.2.tar.gz
+Source0  : https://cpan.metacpan.org/authors/id/E/EG/EGILES/Test-Compile-v3.2.2.tar.gz
 Summary  : 'Assert that your Perl files compile OK.'
 Group    : Development/Tools
 License  : Artistic-1.0 Artistic-1.0-Perl GPL-1.0
@@ -53,8 +53,8 @@ perl components for the perl-Test-Compile package.
 
 
 %prep
-%setup -q -n Test-Compile-v3.2.1
-cd %{_builddir}/Test-Compile-v3.2.1
+%setup -q -n Test-Compile-v3.2.2
+cd %{_builddir}/Test-Compile-v3.2.2
 
 %build
 export http_proxy=http://127.0.0.1:9/
