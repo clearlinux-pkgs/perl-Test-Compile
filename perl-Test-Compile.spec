@@ -5,7 +5,7 @@
 #
 Name     : perl-Test-Compile
 Version  : 3.2.2
-Release  : 45
+Release  : 46
 URL      : https://cpan.metacpan.org/authors/id/E/EG/EGILES/Test-Compile-v3.2.2.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/E/EG/EGILES/Test-Compile-v3.2.2.tar.gz
 Summary  : 'Assert that your Perl files compile OK.'
