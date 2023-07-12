@@ -4,10 +4,10 @@
 # Using build pattern: cpan
 #
 Name     : perl-Test-Compile
-Version  : 3.2.2
-Release  : 46
-URL      : https://cpan.metacpan.org/authors/id/E/EG/EGILES/Test-Compile-v3.2.2.tar.gz
-Source0  : https://cpan.metacpan.org/authors/id/E/EG/EGILES/Test-Compile-v3.2.2.tar.gz
+Version  : 3.3.0
+Release  : 47
+URL      : https://cpan.metacpan.org/authors/id/E/EG/EGILES/Test-Compile-v3.3.0.tar.gz
+Source0  : https://cpan.metacpan.org/authors/id/E/EG/EGILES/Test-Compile-v3.3.0.tar.gz
 Summary  : 'Assert that your Perl files compile OK.'
 Group    : Development/Tools
 License  : Artistic-1.0 Artistic-1.0-Perl GPL-1.0
@@ -53,8 +53,11 @@ perl components for the perl-Test-Compile package.
 
 
 %prep
-%setup -q -n Test-Compile-v3.2.2
-cd %{_builddir}/Test-Compile-v3.2.2
+%setup -q -n Test-Compile-v3.3.0
+cd %{_builddir}/Test-Compile-v3.3.0
+pushd ..
+cp -a Test-Compile-v3.3.0 buildavx2
+popd
 
 %build
 export http_proxy=http://127.0.0.1:9/
@@ -62,7 +65,7 @@ export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
 if test -f Makefile.PL; then
-%{__perl} Makefile.PL
+%{__perl} -I. Makefile.PL
 make  %{?_smp_mflags}
 else
 %{__perl} Build.PL
@@ -89,6 +92,7 @@ find %{buildroot} -type f -name .packlist -exec rm -f {} ';'
 find %{buildroot} -depth -type d -exec rmdir {} 2>/dev/null ';'
 find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 %{_fixperms} %{buildroot}/*
+/usr/bin/elf-move.py avx2 %{buildroot}-v3 %{buildroot} %{buildroot}/usr/share/clear/filemap/filemap-%{name}
 
 %files
 %defattr(-,root,root,-)
