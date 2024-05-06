@@ -6,10 +6,10 @@
 # autospec commit: 5905be9
 #
 Name     : perl-Test-Compile
-Version  : 3.3.2
-Release  : 51
-URL      : https://cpan.metacpan.org/authors/id/E/EG/EGILES/Test-Compile-v3.3.2.tar.gz
-Source0  : https://cpan.metacpan.org/authors/id/E/EG/EGILES/Test-Compile-v3.3.2.tar.gz
+Version  : 3.3.3
+Release  : 52
+URL      : https://cpan.metacpan.org/authors/id/E/EG/EGILES/Test-Compile-v3.3.3.tar.gz
+Source0  : https://cpan.metacpan.org/authors/id/E/EG/EGILES/Test-Compile-v3.3.3.tar.gz
 Summary  : 'Assert that your Perl files compile OK.'
 Group    : Development/Tools
 License  : Artistic-1.0 Artistic-1.0-Perl GPL-1.0
@@ -55,10 +55,10 @@ perl components for the perl-Test-Compile package.
 
 
 %prep
-%setup -q -n Test-Compile-v3.3.2
-cd %{_builddir}/Test-Compile-v3.3.2
+%setup -q -n Test-Compile-v3.3.3
+cd %{_builddir}/Test-Compile-v3.3.3
 pushd ..
-cp -a Test-Compile-v3.3.2 buildavx2
+cp -a Test-Compile-v3.3.3 buildavx2
 popd
 
 %build
